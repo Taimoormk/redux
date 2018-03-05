@@ -1,15 +1,15 @@
-import { addOne, subtractOne }  from '../constants/index';
+import { plusOne, negativeOne }  from '../constants/index';
 
-export function addOneToCounter() {
+export function plusOneToCounter() {
   return {
-    type: addOne,
+    type: plusOne,
     payload: 1
   }
 };
 
-export function subtractOneToCounter() {
+export function negativeOneToCounter() {
   return {
-    type: subtractOne,
+    type: negativeOne,
     payload: 1
   }
 };

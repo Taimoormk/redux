@@ -1,51 +1,54 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addOneToCounter, subtractOneToCounter } from '../actions/index';
+import { plusOneToCounter, negativeOneToCounter } from '../actions/index';
 
 export default class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      x: 0
+      workAroundReactState: 0
     }
   }
 
-  incHandler() {
-    console.log('inc clicked');
+  incrementHandler() {
+    let { store } = this.props;
     this.setState({
-      x: 1
+      workAroundReactState: 1
     })
-    this.props.store.dispatch(addOneToCounter());
+    store.dispatch(plusOneToCounter());
   }
 
-  decHandler() {
-    console.log('dec clicked');
+  decrementHandler() {
+    let { store } = this.props;
     this.setState({
-      x: 1
+      workAroundReactState: 1
     })
-    this.props.store.dispatch(subtractOneToCounter());
+    store.dispatch(negativeOneToCounter());
   }
 
   render() {
-    return(
-      <div className="app container">
+    let { store } = this.props;
+    return (
+      <div className="app container col-md-2 col-md-offset-5">
         <h2>Counter Example</h2>
-        <button
-          className="btn btn-primary"
-          style={{marginRight: '20px'}}
-          onClick={this.incHandler.bind(this)}
-        >
-          Increment
-        </button>
-        <button
-          className="btn btn-danger"
-          style={{marginRight: '20px'}}
-          onClick={this.decHandler.bind(this)}
-        >
-          Decrement
-        </button>
-        <h2>Value : {this.props.store && this.props.store.getState().counter}</h2>
+        <div className="text-center">
+          <button
+            className="btn btn-primary"
+            style={{ margin: '5px' }}
+            onClick={this.incrementHandler.bind(this)}
+          >
+            Increment
+          </button>
+          <button
+            className="btn btn-danger"
+            style={{ margin: '5px' }}
+            onClick={this.decrementHandler.bind(this)}
+          >
+            Decrement
+          </button>
+        </div>
+        <h2 className="text-center">Value : {store && store.getState().counter}</h2>
       </div>
     );
   }

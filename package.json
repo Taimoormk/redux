@@ -1,7 +1,7 @@
 {
-  "name": "redux",
+  "name": "redux-counter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A web application counting using increment and decrement buttons",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

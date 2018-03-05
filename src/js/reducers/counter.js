@@ -1,10 +1,10 @@
-import { addOne, subtractOne } from '../constants';
+import { plusOne, negativeOne } from '../constants';
 
 const counter = function(state=0, action) {
-  if(action.type === addOne) {
+  if(action.type === plusOne) {
     return state + action.payload;
   }
-  if(action.type === subtractOne) {
+  if(action.type === negativeOne) {
     return state - action.payload;
   }
   return state;

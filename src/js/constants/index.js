@@ -1,2 +1,2 @@
-export const addOne = 'addOne';
-export const subtractOne = 'subtractOne';
+export const plusOne = 'plusOne';
+export const negativeOne = 'negativeOne';
