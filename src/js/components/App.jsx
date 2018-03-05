@@ -30,25 +30,27 @@ export default class App extends Component {
   render() {
     let { store } = this.props;
     return (
-      <div className="app container col-md-2 col-md-offset-5">
-        <h2>Counter Example</h2>
-        <div className="text-center">
-          <button
-            className="btn btn-primary"
-            style={{ margin: '5px' }}
-            onClick={this.incrementHandler.bind(this)}
-          >
-            Increment
+      <div className="app">
+        <div className="verticle-align container col-md-2 col-md-offset-5">
+          <h2>Counter Example</h2>
+          <div className="text-center">
+            <button
+              className="btn btn-primary"
+              style={{ margin: '5px' }}
+              onClick={this.incrementHandler.bind(this)}
+            >
+              Increment
           </button>
-          <button
-            className="btn btn-danger"
-            style={{ margin: '5px' }}
-            onClick={this.decrementHandler.bind(this)}
-          >
-            Decrement
+            <button
+              className="btn btn-danger"
+              style={{ margin: '5px' }}
+              onClick={this.decrementHandler.bind(this)}
+            >
+              Decrement
           </button>
+          </div>
+          <h2 className="text-center">Value : {store && store.getState().counter}</h2>
         </div>
-        <h2 className="text-center">Value : {store && store.getState().counter}</h2>
       </div>
     );
   }

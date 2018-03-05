@@ -1,0 +1,13 @@
+.app {
+  background: #7c7c7c url('./image/background.jpg') no-repeat center center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  // filter: blur(5px);
+  .verticle-align {
+    // filter: blur(5px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+}
